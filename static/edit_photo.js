@@ -30,7 +30,9 @@ const imageFilename = document.getElementById("page-container").getAttribute("da
 document.getElementById("revert-button").addEventListener("click", revert);
 
 function revert() {
-  handleSortButtonClick();
+  if (isSorting) {
+    handleSortButtonClick();
+  }
   displayWidth = initialDisplayWidth;
   displayHeight = initialDisplayHeight;
   resizeCanvas(displayWidth, displayHeight); // Resize the canvas to n
