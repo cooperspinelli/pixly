@@ -260,3 +260,9 @@ def get_map():
         return send_file(image, mimetype='image/png')
     else:
         return "Failed to fetch the map", 500
+
+
+@app.route("/init_db")
+def init_db():
+    db.create_all()
+    return "Database initialized!"
